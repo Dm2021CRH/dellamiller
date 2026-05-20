@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Della Miller | VP Operations & Strategic Consulting</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --navy:    #1F3864;
+    --navy2:   #162a4e;
+    --blue:    #2E5FAC;
+    --steel:   #4472C4;
+    --light:   #D9E2F3;
+    --lighter: #EBF0FA;
+    --white:   #FFFFFF;
+    --offwhite:#F7F9FD;
+    --text:    #2C2C2A;
+    --muted:   #595959;
+    --rule:    rgba(46,95,172,0.18);
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--offwhite);
+    color: var(--text);
+    min-height: 100vh;
+  }
+
+  /* ── TOP BAR ─────────────────────────────── */
+  .topbar {
+    background: var(--navy2);
+    height: 4px;
+    width: 100%;
+  }
+
+  /* ── HERO ───────────────────────────────── */
+  .hero {
+    background: var(--navy);
+    color: var(--white);
+    padding: 72px 40px 60px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -80px; right: -80px;
+    width: 420px; height: 420px;
+    border-radius: 50%;
+    border: 60px solid rgba(68,114,196,0.12);
+    pointer-events: none;
+  }
+
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: -60px; left: -40px;
+    width: 280px; height: 280px;
+    border-radius: 50%;
+    border: 40px solid rgba(68,114,196,0.08);
+    pointer-events: none;
+  }
+
+  .hero-inner {
+    max-width: 860px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+  }
+
+  .hero-eyebrow {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--light);
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .hero-eyebrow::before {
+    content: '';
+    display: inline-block;
+    width: 32px;
+    height: 2px;
+    background: var(--steel);
+  }
+
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.4rem, 5vw, 3.6rem);
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -0.01em;
+    margin-bottom: 20px;
+  }
+
+  .hero-title {
+    font-size: 15px;
+    font-weight: 400;
+    color: var(--light);
+    line-height: 1.6;
+    max-width: 600px;
+    margin-bottom: 32px;
+  }
+
+  .hero-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 40px;
+  }
+
+  .tag {
+    background: rgba(68,114,196,0.22);
+    border: 1px solid rgba(255,255,255,0.15);
+    color: var(--light);
+    font-size: 12px;
+    font-weight: 500;
+    padding: 5px 14px;
+    border-radius: 20px;
+    letter-spacing: 0.03em;
+  }
+
+  .hero-cta {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--white);
+    color: var(--navy);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 13px 28px;
+    border-radius: 4px;
+    text-decoration: none;
+    letter-spacing: 0.02em;
+    transition: background 0.2s, transform 0.15s;
+  }
+
+  .btn-primary:hover { background: var(--lighter); transform: translateY(-1px); }
+
+  .btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: transparent;
+    color: var(--white);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 13px 28px;
+    border-radius: 4px;
+    border: 1px solid rgba(255,255,255,0.35);
+    text-decoration: none;
+    letter-spacing: 0.02em;
+    transition: background 0.2s, transform 0.15s;
+  }
+
+  .btn-secondary:hover { background: rgba(255,255,255,0.08); transform: translateY(-1px); }
+
+  /* ── METRICS STRIP ──────────────────────── */
+  .metrics {
+    background: var(--blue);
+    padding: 0 40px;
+  }
+
+  .metrics-inner {
+    max-width: 860px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    border-left: 1px solid rgba(255,255,255,0.12);
+  }
+
+  .metric {
+    padding: 28px 24px;
+    border-right: 1px solid rgba(255,255,255,0.12);
+    color: var(--white);
+    text-align: center;
+  }
+
+  .metric-number {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2rem;
+    font-weight: 700;
+    line-height: 1;
+    margin-bottom: 4px;
+    display: block;
+  }
+
+  .metric-label {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.72);
+    display: block;
+  }
+
+  /* ── MAIN CONTENT ───────────────────────── */
+  .main {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 64px 40px 80px;
+  }
+
+  /* ── SECTION LABEL ──────────────────────── */
+  .section-label {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--blue);
+    margin-bottom: 14px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .section-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--rule);
+  }
+
+  /* ── BIO ────────────────────────────────── */
+  .bio {
+    margin-bottom: 64px;
+  }
+
+  .bio h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.7rem;
+    font-weight: 700;
+    color: var(--navy);
+    line-height: 1.25;
+    margin-bottom: 20px;
+  }
+
+  .bio p {
+    font-size: 15px;
+    line-height: 1.8;
+    color: var(--muted);
+    margin-bottom: 16px;
+    max-width: 680px;
+  }
+
+  .brand-line {
+    margin-top: 28px;
+    padding: 20px 24px;
+    border-left: 3px solid var(--blue);
+    background: var(--lighter);
+    border-radius: 0 4px 4px 0;
+  }
+
+  .brand-line p {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.05rem;
+    font-style: italic;
+    color: var(--navy);
+    margin: 0;
+    line-height: 1.5;
+  }
+
+  /* ── EXPERTISE GRID ─────────────────────── */
+  .expertise {
+    margin-bottom: 64px;
+  }
+
+  .expertise-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1px;
+    background: var(--rule);
+    border: 1px solid var(--rule);
+    border-radius: 6px;
+    overflow: hidden;
+  }
+
+  .expertise-item {
+    background: var(--white);
+    padding: 20px 22px;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .expertise-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--blue);
+    flex-shrink: 0;
+    margin-top: 7px;
+  }
+
+  .expertise-item span {
+    font-size: 13.5px;
+    font-weight: 500;
+    color: var(--text);
+    line-height: 1.4;
+  }
+
+  /* ── TECH STACK ─────────────────────────── */
+  .techstack {
+    margin-bottom: 64px;
+  }
+
+  .tech-category {
+    display: flex;
+    gap: 16px;
+    align-items: baseline;
+    padding: 14px 0;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .tech-category:last-child { border-bottom: none; }
+
+  .tech-cat-label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--navy);
+    min-width: 130px;
+    flex-shrink: 0;
+  }
+
+  .tech-items {
+    font-size: 13.5px;
+    color: var(--muted);
+    line-height: 1.7;
+  }
+
+  .tech-items .ai-note {
+    display: block;
+    font-size: 12px;
+    color: var(--blue);
+    margin-top: 2px;
+  }
+
+  /* ── CONTACT ────────────────────────────── */
+  .contact {
+    background: var(--navy);
+    border-radius: 8px;
+    padding: 44px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+
+  .contact-text h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    color: var(--white);
+    margin-bottom: 8px;
+  }
+
+  .contact-text p {
+    font-size: 14px;
+    color: var(--light);
+    line-height: 1.6;
+  }
+
+  .contact-links {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex-shrink: 0;
+  }
+
+  .contact-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.18);
+    color: var(--white);
+    font-size: 13.5px;
+    font-weight: 500;
+    padding: 11px 20px;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: background 0.2s;
+    white-space: nowrap;
+  }
+
+  .contact-link:hover { background: rgba(255,255,255,0.15); }
+
+  .contact-icon {
+    width: 16px;
+    height: 16px;
+    opacity: 0.8;
+    flex-shrink: 0;
+  }
+
+  /* ── FOOTER ─────────────────────────────── */
+  footer {
+    text-align: center;
+    padding: 32px 40px;
+    font-size: 12px;
+    color: var(--muted);
+    border-top: 1px solid var(--rule);
+    letter-spacing: 0.04em;
+  }
+
+  footer span { color: var(--blue); }
+
+  /* ── RESPONSIVE ─────────────────────────── */
+  @media (max-width: 640px) {
+    .hero { padding: 52px 24px 44px; }
+    .metrics-inner { grid-template-columns: repeat(2, 1fr); }
+    .main { padding: 48px 24px 60px; }
+    .contact { padding: 32px 24px; flex-direction: column; }
+    .tech-category { flex-direction: column; gap: 4px; }
+    .tech-cat-label { min-width: unset; }
+  }
+
+  /* ── FADE IN ─────────────────────────────── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(18px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .hero-inner > * {
+    animation: fadeUp 0.6s ease both;
+  }
+
+  .hero-eyebrow { animation-delay: 0.05s; }
+  .hero h1      { animation-delay: 0.15s; }
+  .hero-title   { animation-delay: 0.25s; }
+  .hero-tags    { animation-delay: 0.32s; }
+  .hero-cta     { animation-delay: 0.40s; }
+</style>
+</head>
+<body>
+
+<div class="topbar"></div>
+
+<!-- ── HERO ─────────────────────────────────────── -->
+<section class="hero">
+  <div class="hero-inner">
+    <p class="hero-eyebrow">Healthcare Operations Executive</p>
+    <h1>Della Miller</h1>
+    <p class="hero-title">
+      VP, Operations &amp; Strategic Consulting &nbsp;·&nbsp; Workforce Management &nbsp;·&nbsp; Change Leadership &nbsp;·&nbsp; Contact Center
+    </p>
+    <div class="hero-tags">
+      <span class="tag">20+ Years Experience</span>
+      <span class="tag">11+ National Sites</span>
+      <span class="tag">Remote / Travel Available</span>
+      <span class="tag">PMP Candidate</span>
+      <span class="tag">USAF Reserve Veteran</span>
+    </div>
+    <div class="hero-cta">
+      <a href="mailto:dellalitam@gmail.com" class="btn-primary">
+        <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/></svg>
+        Get in Touch
+      </a>
+      <a href="https://linkedin.com/in/dellamiller" target="_blank" rel="noopener" class="btn-secondary">
+        <svg class="contact-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        LinkedIn Profile
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ── METRICS STRIP ──────────────────────────────── -->
+<div class="metrics">
+  <div class="metrics-inner">
+    <div class="metric">
+      <span class="metric-number">40%</span>
+      <span class="metric-label">Census Growth</span>
+    </div>
+    <div class="metric">
+      <span class="metric-number">&lt;2%</span>
+      <span class="metric-label">Team Turnover</span>
+    </div>
+    <div class="metric">
+      <span class="metric-number">3,500</span>
+      <span class="metric-label">Staff Trained</span>
+    </div>
+    <div class="metric">
+      <span class="metric-number">11+</span>
+      <span class="metric-label">Sites Operated</span>
+    </div>
+  </div>
+</div>
+
+<!-- ── MAIN ───────────────────────────────────────── -->
+<main class="main">
+
+  <!-- BIO -->
+  <section class="bio">
+    <p class="section-label">About</p>
+    <h2>The operator who builds the bridge — and documents how to cross it.</h2>
+    <p>
+      With 20+ years in healthcare operations, I specialize in standing where IT capability meets business need — translating technical constraints into workflows that actually work, and delivering the data infrastructure leadership needs to make strategic decisions with confidence.
+    </p>
+    <p>
+      At Carrefour Associates, I've served on the internal board of consulting experts while simultaneously operating as the primary system administrator across EMR platforms, contact center technology, and automation tools. From referral origination through patient onboarding, I own the cross-functional workflows, the training, the system integrations, and the reporting that makes the operation run.
+    </p>
+    <p>
+      I don't wait for IT to solve business problems. I translate what the business needs into language IT can build — and what IT builds into systems people will actually use.
+    </p>
+    <div class="brand-line">
+      <p>"I don't inherit success — I build it, document it, and make it repeatable."</p>
+    </div>
+  </section>
+
+  <!-- EXPERTISE -->
+  <section class="expertise">
+    <p class="section-label">Core Expertise</p>
+    <div class="expertise-grid">
+      <div class="expertise-item"><span class="expertise-dot"></span><span>Operational Transformation &amp; Change Management</span></div>
+      <div class="expertise-item"><span class="expertise-dot"></span><span>Cross-Functional Workflow Design &amp; Adoption</span></div>
+      <div class="expertise-item"><span class="expertise-dot"></span><span>Contact Center Design &amp; Multi-Site Operations</span></div>
+      <div class="expertise-item"><span class="expertise-dot"></span><span>Workforce Planning &amp; Capacity Forecasting</span></div>
+      <div class="expertise-item"><span class="expertise-dot"></span><span>Strategic Data Analytics &amp; Executive Reporting</span></div>
+      <div class="expertise-item"><span class="expertise-dot"></span><span>Enterprise Systems Integration &amp; Administration</span></div>
+      <div class="expertise-item"><span class="expertise-dot"></span><span>IT-to-Business Translation &amp; Stakeholder Alignment</span></div>
+      <div class="expertise-item"><span class="expertise-dot"></span><span>Third-Party Product Sourcing, Vetting &amp; Administration</span></div>
+      <div class="expertise-item"><span class="expertise-dot"></span><span>Process Standardization, SOPs &amp; Training Design</span></div>
+      <div class="expertise-item"><span class="expertise-dot"></span><span>Vendor &amp; Contract Management</span></div>
+      <div class="expertise-item"><span class="expertise-dot"></span><span>Telephony Architecture &amp; Automation Engineering</span></div>
+      <div class="expertise-item"><span class="expertise-dot"></span><span>HIPAA / CMS Compliance</span></div>
+    </div>
+  </section>
+
+  <!-- TECH STACK -->
+  <section class="techstack">
+    <p class="section-label">Tools &amp; Technology</p>
+
+    <div class="tech-category">
+      <span class="tech-cat-label">EMR Systems</span>
+      <span class="tech-items">Epic &nbsp;·&nbsp; Curantis Solutions &nbsp;·&nbsp; Suncoast Solutions &nbsp;·&nbsp; Qboss</span>
+    </div>
+    <div class="tech-category">
+      <span class="tech-cat-label">Contact Center</span>
+      <span class="tech-items">Vuesion BBX &nbsp;·&nbsp; Five9 &nbsp;·&nbsp; Verizon Contact Center Maxx</span>
+    </div>
+    <div class="tech-category">
+      <span class="tech-cat-label">Automation</span>
+      <span class="tech-items">Power Automate &nbsp;·&nbsp; Power Apps &nbsp;·&nbsp; Adaptive Cards &nbsp;·&nbsp; SharePoint</span>
+    </div>
+    <div class="tech-category">
+      <span class="tech-cat-label">Analytics &amp; Dev</span>
+      <span class="tech-items">Python / Pandas &nbsp;·&nbsp; Excel / openpyxl &nbsp;·&nbsp; Reporting Dashboards &nbsp;·&nbsp; Erlang-C Methodology</span>
+    </div>
+    <div class="tech-category">
+      <span class="tech-cat-label">AI</span>
+      <span class="tech-items">
+        Claude (Anthropic) — applied across workflow design, analytics, document generation &amp; operational reporting
+        <span class="ai-note">AI-assisted EMR integration concepts &nbsp;·&nbsp; Third-party AI add-on vetting &amp; administration</span>
+      </span>
+    </div>
+    <div class="tech-category">
+      <span class="tech-cat-label">Productivity</span>
+      <span class="tech-items">Microsoft Office Suite &nbsp;·&nbsp; Microsoft Teams &nbsp;·&nbsp; CRM Platforms</span>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section>
+    <p class="section-label">Contact</p>
+    <div class="contact">
+      <div class="contact-text">
+        <h3>Open to VP-level opportunities.</h3>
+        <p>
+          Business Development &nbsp;·&nbsp; Customer Success &nbsp;·&nbsp; Operations<br>
+          Contact Center Leadership &nbsp;·&nbsp; Strategic Consulting<br>
+          Remote with travel &nbsp;·&nbsp; 302.562.2697
+        </p>
+      </div>
+      <div class="contact-links">
+        <a href="mailto:dellalitam@gmail.com" class="contact-link">
+          <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/></svg>
+          dellalitam@gmail.com
+        </a>
+        <a href="tel:3025622697" class="contact-link">
+          <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.16 6.16l1.27-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          302.562.2697
+        </a>
+        <a href="https://linkedin.com/in/dellamiller" target="_blank" rel="noopener" class="contact-link">
+          <svg class="contact-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          LinkedIn Profile
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <span>Della Miller</span> &nbsp;·&nbsp; VP Operations &amp; Strategic Consulting &nbsp;·&nbsp; Healthcare &nbsp;·&nbsp; 2026
+</footer>
+
+</body>
+</html>
